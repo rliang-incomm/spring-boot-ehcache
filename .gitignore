@@ -1,0 +1,28 @@
+spring-boot-ehcache/
+
+# OS
+.DS_Store
+
+# IntelliJ
+.idea/
+*.iml
+*.eml
+
+# Eclipse
+.settings/
+.classpath
+.project
+.factorypath
+
+# jEnv
+.java-version
+
+# Project
+target/
+log
+/.settings/
+/.classpath
+/.project
+
+# ignore generated CSS files
+src/main/resources/META-INF/resources/**/*.css
