@@ -19,6 +19,7 @@ public class StudentRestController {
     this.studentService = studentService;
   }
 
+    //curl http://localhost:8080/rest/students/1
   @GetMapping(path = "/{id}", produces = MediaType.TEXT_PLAIN_VALUE)
   public String get(@PathVariable Long id) {
     Optional<Student> student = studentService.find(id);
@@ -29,6 +30,18 @@ public class StudentRestController {
 
     return "";
   }
+
+  //curl http://localhost:8080/rest/students/json/1
+    @GetMapping(path = "/json/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Student getJson(@PathVariable Long id) {
+        Optional<Student> student = studentService.find(id);
+
+        if (student.isPresent()) {
+            return student.get();
+        }
+
+        return null;
+    }
 
   @PostMapping(produces = MediaType.TEXT_PLAIN_VALUE)
   public String create(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String courseOfStudies) {
