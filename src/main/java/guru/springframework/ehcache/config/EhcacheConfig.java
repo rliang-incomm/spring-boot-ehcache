@@ -11,10 +11,10 @@ import java.util.Arrays;
 @Configuration
 @EnableCaching
 public class EhcacheConfig {
-
+/*
   @Bean
   public KeyGenerator multiplyKeyGenerator() {
     return (Object target, Method method, Object... params) -> method.getName() + "_" + Arrays.toString(params);
   }
-
+*/
 }
